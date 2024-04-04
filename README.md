@@ -1,1 +1,5 @@
-- [x] [Investigate espionage](docs/notes/espionage.md)
+#### Research
+
+- [ ] [Map sizes](docs/notes/map-sizes.md)
+- [x] [Espionage](docs/notes/espionage.md)
+
