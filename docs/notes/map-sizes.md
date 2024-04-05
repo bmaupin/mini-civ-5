@@ -1,5 +1,16 @@
 ## Notes
 
+#### To do
+
+- [ ] What is the smallest map size allowed?
+  - Could we use the WorldBuilder for this?
+    - WorldBuilder can be used to create maps with the same map generation scripts, which might give us an idea of how many cities could fit on a map without having to start a new game
+    - Currently it only allows creating a 20x20 map; could this be modified?
+      - Current range is 20x20 - 128x80
+      - Yes, it can be modified; see [worldbuilder.md](worldbuilder.md)
+      - See also: https://forums.civfanatics.com/threads/worldbuilder-unofficial-updates-modifications.392023/
+- [ ] Document smallest map sizes per map type
+
 #### Basics
 
 - Cities have to be built at least 4 tiles from another city, i.e. with no less than 3 tiles between
