@@ -46,3 +46,18 @@
    ```
    comm -13 <(xxd -c1 WorldBuilder.exe.bak) <(xxd -c1 WorldBuilder.exe) > WorldBuilder.exe.patch
    ```
+
+## Getting WorldBuilder running in Linux
+
+#### To do
+
+- [ ] Try launching WorldBuilder with `-PromptForGamePath`?
+  - (https://forums.civfanatics.com/threads/if-youre-having-problems-launching-worldbuilder.490200/)
+- [ ] Try launching Civ 5 manually: `%command% \\dx9 -Nexus 4320`
+  - Then launch WorldBuilder with wine/proton outside of Steam?
+
+#### Notes
+
+- WorldBuilder starts Civ 5 with this parameter: `-Nexus 4320`
+  - Maybe this is some kind of socket connection so WorldBuilder can connect to Civ 5?
+  - Does WorldBuilder also need access to
