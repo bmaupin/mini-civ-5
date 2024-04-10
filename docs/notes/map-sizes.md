@@ -35,4 +35,12 @@
     - Formula: * 4/3, due to the distance between cities
     - So really 14x18 isn't too egregious ...
 
+#### Default sizes
 
+| Name     | Size   | Number of tiles |
+| -------- | ------ | --------------- |
+| Duel     | 40x24  | 960             |
+| Tiny     | 56x36  | 2016            |
+| Small    | 66x42  | 2772            |
+| Standard | 80x52  | 4160            |
+| Large    | 104x64 | 6656            |
