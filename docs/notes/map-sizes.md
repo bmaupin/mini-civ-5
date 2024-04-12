@@ -44,3 +44,17 @@
 | Small    | 66x42  | 2772            |
 | Standard | 80x52  | 4160            |
 | Large    | 104x64 | 6656            |
+
+#### Testing various map sizes
+
+| Name | Size in XML | Size in game | Map          |
+| ---- | ----------- | ------------ | ------------ |
+| Duel | 40x24       | 40x24        | Archipelago  |
+| Duel |             | 40x24        | Continents   |
+| Duel |             | 40x24        | Earth        |
+| Duel |             | 40x24        | Fractal      |
+| Duel |             | 18x14        | Great Plains |
+| Duel |             | 40x24        | Pangaea      |
+| Tiny | 56x36       |              |              |
+| Tiny |             |              |              |
+| Tiny |             |              |              |
