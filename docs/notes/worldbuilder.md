@@ -49,7 +49,37 @@
 
 ## Getting WorldBuilder running in Linux
 
-#### Current progress
+#### Run WorldBuilder using Wine
+
+WorldBuilder opens, but
+
+- It must be manually pointed to the Civ 5 directory
+- Many of the map tiles don't show
+- The map generation scripts don't seem to do anything
+
+1. Install Wine
+
+   - I used Wine 9
+
+1. Set up the SDK in a new Wine prefix
+
+   ```
+   export WINEPREFIX=~/.local/share/wineprefixes/civ5sdk
+   # I only tested a 32-bit prefix with Wine. Maybe this is why it didn't work with Proton, since it uses a 64-bit prefix?
+   WINEARCH=win32 wineboot
+   # If you don't install .NET, Wine will use Mono, but this caused a crash in the map editor
+   winetricks -q dotnet35
+   ```
+
+1. Open WorldBuilder
+
+   ```
+   wine ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK/WorldBuilder/x86/WorldBuilder.exe -PromptForGamePath
+   ```
+
+1. Follow the same steps below to start Civ 5 in Steam using Proton
+
+#### Run WorldBuilder using Proton
 
 Currently gets to the WorldBuilder menu but crashes when clicking _New Map_ with this error:
 
