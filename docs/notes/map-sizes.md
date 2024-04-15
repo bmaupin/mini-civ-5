@@ -47,14 +47,45 @@
 
 #### Testing various map sizes
 
-| Name | Size in XML | Size in game | Map          |
-| ---- | ----------- | ------------ | ------------ |
-| Duel | 40x24       | 40x24        | Archipelago  |
-| Duel |             | 40x24        | Continents   |
-| Duel |             | 40x24        | Earth        |
-| Duel |             | 40x24        | Fractal      |
-| Duel |             | 18x14        | Great Plains |
-| Duel |             | 40x24        | Pangaea      |
-| Tiny | 56x36       |              |              |
-| Tiny |             |              |              |
-| Tiny |             |              |              |
+| Name | Size in XML | Size in game | Map            |
+| ---- | ----------- | ------------ | -------------- |
+| Duel | 40x24       | 40x24        | Archipelago    |
+| Duel |             | 40x24        | Continents     |
+| Duel |             | 40x24        | Earth          |
+| Duel |             | 40x24        | Fractal        |
+| Duel |             | 18x14        | Great Plains   |
+| Duel |             | 16x16        | North vs South |
+| Duel |             | 40x24        | Pangaea        |
+| Tiny | 56x36       | 56x36        | Continents     |
+| Tiny |             | 28x22        | Great Plains   |
+| Tiny |             | 24x24        | North vs South |
+
+#### Get map size
+
+1. (Optional) Modify ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/
+
+   1. Set `DebugPanel = 1`
+
+      ⓘ This enables the debug panel, which allows revealing the entire map
+
+1. Modify ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/UserSettings.ini
+
+   1. Set `DebugMode = 1`
+
+      ⓘ This will show coordinates when hovering over a tile
+
+1. Start a game
+
+1. Press Ctrl-Z and dismiss dialogues
+
+   ⓘ This will allow seeing the coordinates for all tiles, not just the visible tiles
+
+1. (Optional) Press ~ > _Reveal All_
+
+   💡 This isn't necessary but it will make it easier to see all the map tiles and get the map size
+
+1. Move the mouse to the upper-right corner of the map and get the coordinates from the tooltip
+
+1. Add 1 to each coordinate to get the map size
+
+   e.g. a coordinate of `17x 13y` is an 18x12 map
