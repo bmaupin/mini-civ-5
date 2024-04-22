@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="1a39e7ed-7f1d-41e2-b849-6c0dcb7998e6" version="1">
+  <Properties>
+    <Name>Quick Civ 5</Name>
+    <Stability>Alpha</Stability>
+    <Teaser>Play Civ 5 more quickly</Teaser>
+    <Description></Description>
+    <Authors>bmaupin</Authors>
+    <HideSetupGame>0</HideSetupGame>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>1</SupportsMultiplayer>
+    <SupportsHotSeat>1</SupportsHotSeat>
+    <SupportsMac>1</SupportsMac>
+    <ReloadAudioSystem>0</ReloadAudioSystem>
+    <ReloadLandmarkSystem>0</ReloadLandmarkSystem>
+    <ReloadStrategicViewSystem>0</ReloadStrategicViewSystem>
+    <ReloadUnitSystem>0</ReloadUnitSystem>
+  </Properties>
+  <Dependencies />
+  <References />
+  <Blocks />
+  <Files>
+    <File md5="53c00d5ff60a465e9792c76b2f10285d" import="1">XML/Quick_Civ_5.xml</File>
+  </Files>
+  <Actions>
+    <OnModActivated>
+      <UpdateDatabase>XML/Quick_Civ_5.xml</UpdateDatabase>
+    </OnModActivated>
+  </Actions>
+</Mod>

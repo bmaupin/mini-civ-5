@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <GameOptions>
+        <Update>
+            <Where Type="GAMEOPTION_NO_CITY_RAZING" />
+            <Set>
+                <Default>1</Default>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_ALWAYS_WAR" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_ALWAYS_PEACE" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_NO_CHANGING_WAR_PEACE" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_LOCK_MODS" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_QUICK_COMBAT" />
+            <Set>
+                <Default>1</Default>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_NO_SCIENCE" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_NO_POLICIES" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_NO_HAPPINESS" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_NO_TUTORIAL" />
+            <Set>
+                <Default>1</Default>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_QUICK_MOVEMENT" />
+            <Set>
+                <Default>1</Default>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_NO_RELIGION" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <!-- <Update>
+            <Where Type="GAMEOPTION_NO_ESPIONAGE" />
+            <Set>
+                <Default>1</Default>
+            </Set>
+        </Update> -->
+        <Update>
+            <Where Type="GAMEOPTION_NO_LEAGUES" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+        <Update>
+            <Where Type="GAMEOPTION_NO_CULTURE_OVERVIEW_UI" />
+            <Set>
+                <Visible>1</Visible>
+            </Set>
+        </Update>
+    </GameOptions>
+</GameData>
