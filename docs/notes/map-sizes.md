@@ -2,14 +2,18 @@
 
 #### To do
 
-- [ ] What is the smallest map size allowed?
+- [ ] Test with 40% map sizes across the board
+  - 16x10 worked out fairly well for duel
+  - This is almost exactly 40% of the original map size for both dimensions
+  - So instead of trying to figure out custom sizes for each map size, just do 40% across the board
+- [x] What is the smallest map size allowed?
   - Could we use the WorldBuilder for this?
     - WorldBuilder can be used to create maps with the same map generation scripts, which might give us an idea of how many cities could fit on a map without having to start a new game
     - Currently it only allows creating a 20x20 map; could this be modified?
       - Current range is 20x20 - 128x80
       - Yes, it can be modified; see [worldbuilder.md](worldbuilder.md)
       - See also: https://forums.civfanatics.com/threads/worldbuilder-unofficial-updates-modifications.392023/
-- [ ] Document smallest map sizes per map type
+- [x] Document smallest map sizes per map type
 
 #### Basics
 

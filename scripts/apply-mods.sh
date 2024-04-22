@@ -35,11 +35,10 @@ for worlds_file in "${worlds_files[@]}"; do
         sed -i ':a;N;$!ba;s/<GridWidth>[0-9]\+<\/GridWidth>/<GridWidth>16<\/GridWidth>/1' "$worlds_file"
         sed -i ':a;N;$!ba;s/<GridHeight>[0-9]\+<\/GridHeight>/<GridHeight>10<\/GridHeight>/1' "$worlds_file"
         # Tiny
-        sed -i ':a;N;$!ba;s/<GridWidth>[0-9]\+<\/GridWidth>/<GridWidth>20<\/GridWidth>/2' "$worlds_file"
-        sed -i ':a;N;$!ba;s/<GridHeight>[0-9]\+<\/GridHeight>/<GridHeight>13<\/GridHeight>/2' "$worlds_file"
+        sed -i ':a;N;$!ba;s/<GridWidth>[0-9]\+<\/GridWidth>/<GridWidth>22<\/GridWidth>/2' "$worlds_file"
+        sed -i ':a;N;$!ba;s/<GridHeight>[0-9]\+<\/GridHeight>/<GridHeight>14<\/GridHeight>/2' "$worlds_file"
         # Small
-        sed -i ':a;N;$!ba;s/<GridWidth>[0-9]\+<\/GridWidth>/<GridWidth>25<\/GridWidth>/3' "$worlds_file"
-        sed -i ':a;N;$!ba;s/<GridHeight>[0-9]\+<\/GridHeight>/<GridHeight>16<\/GridHeight>/3' "$worlds_file"
+        sed -i ':a;N;$!ba;s/<GridWidth>[0-9]\+<\/GridWidth>/<GridWidth>26<\/GridWidth>/3' "$worlds_file"
+        sed -i ':a;N;$!ba;s/<GridHeight>[0-9]\+<\/GridHeight>/<GridHeight>17<\/GridHeight>/3' "$worlds_file"
     fi
-    break
 done
