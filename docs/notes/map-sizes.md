@@ -19,6 +19,14 @@
   - Should this be modified?
     - Maybe we should leave this as-is, because of 1 unit per tile. Otherwise there might not be enough spaces between cities for military units. We could still limit map sizes as appropriate
 - Map sizes are defined in `civ5worlds.xml`
+  - Linux
+    - ~/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/steamassets/assets/dlc/expansion2/gameplay/xml/gameinfo/civ5worlds.xml
+    - ~/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/steamassets/assets/dlc/expansion/gameplay/xml/gameinfo/civ5worlds.xml
+    - ~/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/steamassets/assets/gameplay/xml/gameinfo/civ5worlds.xml
+  - Proton
+    - ~/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/Assets/Gameplay/XML/GameInfo/CIV5Worlds.xml
+    - ~/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/Assets/DLC/Expansion/Gameplay/XML/GameInfo/CIV5Worlds.xml
+    - ~/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/Assets/DLC/Expansion2/Gameplay/XML/GameInfo/CIV5Worlds.xml
 - Maps use "grid" sizes like Civ 4, but instead of an actual grid
 
 #### Number of cities allowed
@@ -94,6 +102,41 @@ WB_Script_Random_Scandinavia.lua:               [GameInfo.Worlds.WORLDSIZE_DUEL.
 West_vs_East.lua:               [GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {20, 14},
 ```
 
+#### Testing custom map sizes
+
+ⓘ Goal: Enough space for each civ to have ~3 cities per map size
+
+| Size  | Map         | Number of tiles | WorldBuilder results         | In-game results |
+| ----- | ----------- | --------------- | ---------------------------- | --------------- |
+| 15x9  | Archipelago | 135             | 2 civs with 3 cities each?   |                 |
+| 15x9  | Continents  |                 | 2 civs with 1-2 cities each? |                 |
+| 15x9  | Fractal     |                 | 2 civs with 2-3 cities each? |                 |
+| 15x9  | Pangea      |                 | 2 civs with 2-3 cities each? |                 |
+| 16x10 | Archipelago | 160             | 2 civs with 3-4 cities each? | Works           |
+| 16x10 | Continents  |                 | 2 civs with 2 cities each?   | Works           |
+| 16x10 | Earth       |                 | N/A                          | 40x24           |
+| 16x10 | Fractal     |                 | 2 civs with 3-4 cities each? |                 |
+| 16x10 | Pangea      |                 | 2 civs with 3 cities each?   |                 |
+| 20x12 | Archipelago | 240             | 3 civs with 2-3 cities each? |                 |
+| 20x12 | Continents  |                 | 3 civs with 2 cities each?   |                 |
+| 20x12 | Fractal     |                 | 3 civs with 3 cities each?   |                 |
+| 20x12 | Pangea      |                 | 3 civs with 2-3 cities each? |                 |
+| 20x13 | Archipelago | 260             | 3 civs with 2-3 cities each? |                 |
+| 20x13 | Continents  |                 | 3 civs with 2-3 cities each? |                 |
+| 20x13 | Fractal     |                 | 3 civs with 3-4 cities each? |                 |
+| 20x13 | Pangea      |                 | 3 civs with 2-3 cities each? |                 |
+| 25x16 | Archipelago | 400             | 4 civs with 4 cities each?   |                 |
+| 25x16 | Continents  |                 | 4 civs with 2-3 cities each? |                 |
+| 25x16 | Earth       |                 | N/A                          |                 |
+| 25x16 | Fractal     |                 | 4 civs with 3-4 cities each? |                 |
+| 25x16 | Pangea      |                 | 4 civs with 3-4 cities each? |                 |
+
+Test in game:
+
+- 16x10
+- 20x13
+- 25x16
+
 #### Get map size
 
 1. (Optional) Modify ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/
@@ -123,3 +166,21 @@ West_vs_East.lua:               [GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {20, 14},
 1. Add 1 to each coordinate to get the map size
 
    e.g. a coordinate of `17x 13y` is an 18x12 map
+
+#### Map script locations
+
+- Sid Meier's Civilization V/Assets/DLC/Expansion/Gameplay/Lua/
+- Sid Meier's Civilization V/Assets/DLC/Expansion/Maps/
+- Sid Meier's Civilization V/Assets/DLC/Expansion2/Gameplay/Lua/
+- Sid Meier's Civilization V/Assets/Gameplay/Lua/
+- Sid Meier's Civilization V/Assets/Maps/
+
+#### Test results
+
+- 25x16, 4 players (1 AI on player team), continents, modern era, quick speed: about 1h5m
+  - No city states
+  - Religion, science, happiness, world congress off
+- 22x14, 3 players, pangaea, classical era, normal speed: about 1h
+  - No city states
+  - Religion, science, happiness, world congress off
+  - Player: 3 cities, AI: 2 cities each
