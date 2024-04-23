@@ -21,7 +21,7 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="53c00d5ff60a465e9792c76b2f10285d" import="1">XML/Quick_Civ_5.xml</File>
+    <File md5="85af9cd37205b7e0b5d3a773e7c1a6e4" import="1">XML/Quick_Civ_5.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
