@@ -20,8 +20,12 @@
    - https://www.reddit.com/r/civ5/comments/1sa0xi/why_cant_i_just_disable_nukes/
 1. [ ] Put all quick play options in a separate section of the UI?
    - See here for an example: https://forums.civfanatics.com/threads/really-advanced-setup.486324/
+1. [x] Build mod
+1. [ ] Package mod
+1. [ ] [Package as DLC?](docs/notes/dlc.md)
 
 #### Research
 
 - [x] [Map sizes](docs/notes/map-sizes.md)
 - [x] [Espionage](docs/notes/espionage.md)
+- [x] [Religion](docs/notes/religion.md)

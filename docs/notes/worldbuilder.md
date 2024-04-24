@@ -71,13 +71,48 @@ WorldBuilder opens, but
    winetricks -q dotnet35
    ```
 
+**Testing**
+
+no changes yet:
+
+```
+mkdir -p ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files/Steam/steamapps/common
+ln -s ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files/Steam/steamapps/common/
+ln -s ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files/Steam/steamapps/common/
+```
+
+```
+mkdir -p ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common
+ln -s ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/
+ln -s ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/
+```
+
+```
+STEAM_COMPAT_DATA_PATH="/home/$USER/.local/share/Steam/steamapps/compatdata/16830" STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/$USER/.local/share/Steam" "$HOME/.local/share/Steam/steamapps/common/Proton 8.0"/proton waitforexitandrun regedit
+```
+
 1. Open WorldBuilder
 
    ```
-   wine ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK/WorldBuilder/x86/WorldBuilder.exe -PromptForGamePath
+   #wine ~/.steam/steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK/WorldBuilder/x86/WorldBuilder.exe -PromptForGamePath
+   #wine ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files/Steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK/WorldBuilder/x86/WorldBuilder.exe -PromptForGamePath
+   #wine ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK/WorldBuilder/x86/WorldBuilder.exe -PromptForGamePath
+   #cd ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files/Steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK/WorldBuilder/x86/; wine WorldBuilder.exe -PromptForGamePath
+   cd ~/.local/share/wineprefixes/civ5sdk/drive_c/Program\ Files\ \(x86\)/Steam/steamapps/common/Sid\ Meier\'s\ Civilization\ V\ SDK/WorldBuilder/x86/; wine WorldBuilder.exe -PromptForGamePath
    ```
 
-1. Follow the same steps below to start Civ 5 in Steam using Proton
+   ```
+   #C:\Program Files\Steam\steamapps\common\Sid Meier's Civilization V\CivilizationV.exe
+   C:\Program Files (x86)\Steam\steamapps\common\Sid Meier's Civilization V\CivilizationV.exe
+   ```
+
+1. Start Civ 5 using Proton
+
+   - It doesn't seem necessary to start Civ 5 first, then close it, then start it again; when WorldBuilder is first started, it will appear to hang. Then start Civ 5 with `-Nexus 4320`
+
+   ```
+   STEAM_COMPAT_DATA_PATH="/home/$USER/.local/share/Steam/steamapps/compatdata/8930" STEAM_COMPAT_CLIENT_INSTALL_PATH="/home/$USER/.local/share/Steam" "$HOME/.local/share/Steam/steamapps/common/Proton 8.0"/proton waitforexitandrun "/home/$USER/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/CivilizationV.exe" \\dx9 -Nexus 4320
+   ```
 
 #### Run WorldBuilder using Proton
 

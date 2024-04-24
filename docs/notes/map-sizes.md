@@ -143,13 +143,13 @@ Test in game:
 
 #### Get map size
 
-1. (Optional) Modify ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/
+1. (Optional) Modify ~/.local/share/Aspyr/Sid Meier's Civilization 5/config.ini (or ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/config.ini)
 
    1. Set `DebugPanel = 1`
 
       ⓘ This enables the debug panel, which allows revealing the entire map
 
-1. Modify ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/UserSettings.ini
+1. Modify ~/.local/share/Aspyr/Sid Meier's Civilization 5/UserSettings.ini (or ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/UserSettings.ini)
 
    1. Set `DebugMode = 1`
 
