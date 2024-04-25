@@ -21,6 +21,7 @@
   <References />
   <Blocks />
   <Files>
+    <File md5="d922d5297c2903d57a142bca6f3ebad9" import="1">Lua/Quick_Civ_5.lua</File>
     <File md5="85af9cd37205b7e0b5d3a773e7c1a6e4" import="1">XML/Quick_Civ_5.xml</File>
   </Files>
   <Actions>
@@ -28,4 +29,10 @@
       <UpdateDatabase>XML/Quick_Civ_5.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
+  <EntryPoints>
+    <EntryPoint type="InGameUIAddin" file="Lua/Quick_Civ_5.lua">
+      <Name>Logic</Name>
+      <Description>Logic</Description>
+    </EntryPoint>
+  </EntryPoints>
 </Mod>
