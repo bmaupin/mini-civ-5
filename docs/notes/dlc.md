@@ -1,12 +1,74 @@
 # Create custom DLC
 
-## Read first
+## UI overrides
 
-After a bunch of testing, it looks like custom DLC that overwrites game logic requires a UUID (which is hard-coded in the game executable) and key and only works with tools like MPMPM, which generate an entire dump of the game state. This is way too complicated and rigid.
+For DLC that only needs to override the UI, a custom DLC can be created:
 
-DLC that only make UI changes seem to work without a key (see [Enhanced UI DLC mod](https://forums.civfanatics.com/threads/enhanced-user-interface.512263/)).
+- The DLC will not show up in the in-game menu but it will still work
+- All of the DLC files can be put into their own directory, which can be copied to `Assets/DLC`
+- The DLC directory must contain a `Civ5Pkg` file
 
-## Notes
+  - `GUID` should be unique
+  - `Key` should not be in the file
+  - The directory containing the UI overrides should be included in the file, e.g.
+
+    ```xml
+    <UISkin name="Expansion2Primary" set="Expansion2" platform="Common">
+      <GameplaySkin>
+        <Directory>UI</Directory>
+      </GameplaySkin>
+    </UISkin>
+    ```
+
+- Any existing Lua files with the same paths and names as the game files will be automatically applied
+
+  e.g. Assets/DLC/My_DLC/UI/InGame/InGame.lua
+
+- If there are any additional Lua files that need to be applied, they must be included from one of the above Lua files
+
+  e.g. This line would need to be added to My_DLC/UI/InGame/InGame.lua to include My_DLC/UI/MyFile.lua:
+
+  ```lua
+  include( "MyFile" );
+  ```
+
+## Gameplay overrides
+
+#### Lua
+
+Lua gameplay overrides should work as long as they're included from an override of an existing game Lua file, similarly to UI Lua overrides. See above for more information.
+
+#### XML
+
+As best as I can tell, gameplay XML overrides are not allowed by custom DLC, because if the `Civ5Pkg` file is missing a valid `Key`, gameplay overrides such as `<Gameplay>` and `<Gamedata>` are ignored.
+
+I'm only aware of these workarounds:
+
+1. Use a tool such as [MPMPM](https://forums.civfanatics.com/threads/mpmpm-multiplayer-mod-dlc-hack-updated.533238/) to convert the DLC to a multiplayer modpack
+
+   - This works by dumping the entire game database to XML files and is such is not very flexible or easily changed
+   - It seems like there is also a Java tool that can export the game database to create DLC like this: https://forums.civfanatics.com/threads/lua-database-modifications.566538/#post-14249730
+
+1. Game files can be modified directly
+
+1. Or XML files that make changes can be copied to an existing DLC
+
+   1. Copy the XML file to an existing DLC
+
+      e.g. Assets/DLC/Expansion2/My_DLC/My_File.xml
+
+   1. Then modify the `Civ5Pkg` file for that DLC to include the new file
+
+      e.g. `<GameData>My_File.xml</GameData>`
+
+      ⓘ The full path to the file in the DLC directory shouldn't be necessary, only the file name
+
+## Examples of custom DLC
+
+- [CivStats](https://github.com/bayvakoof/civstats-mod/)
+- [Enhanced UI DLC mod](https://forums.civfanatics.com/threads/enhanced-user-interface.512263/)
+
+## Research
 
 #### To do
 
