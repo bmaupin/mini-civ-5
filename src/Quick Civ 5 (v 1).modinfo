@@ -21,7 +21,7 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="f85d4869cf6a0baea2ab6f06653b33e4" import="1">Lua/Quick_Civ_5.lua</File>
+    <File md5="f85d4869cf6a0baea2ab6f06653b33e4" import="0">Lua/Quick_Civ_5.lua</File>
     <File md5="8a9f25d8c781e45b6cd91d1204e8084c" import="1">XML/Quick_Civ_5.xml</File>
   </Files>
   <Actions>
