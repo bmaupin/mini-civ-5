@@ -44,20 +44,20 @@ As best as I can tell, gameplay XML overrides are not allowed by custom DLC, bec
 
 I'm only aware of these workarounds:
 
-1. Use a tool such as [MPMPM](https://forums.civfanatics.com/threads/mpmpm-multiplayer-mod-dlc-hack-updated.533238/) to convert the DLC to a multiplayer modpack
+- Use a tool such as [MPMPM](https://forums.civfanatics.com/threads/mpmpm-multiplayer-mod-dlc-hack-updated.533238/) to convert the DLC to a multiplayer modpack
 
-   - This works by dumping the entire game database to XML files and is such is not very flexible or easily changed
-   - It seems like there is also a Java tool that can export the game database to create DLC like this: https://forums.civfanatics.com/threads/lua-database-modifications.566538/#post-14249730
+  - This works by dumping the entire game database to XML files and is such is not very flexible or easily changed
+  - It seems like there is also a Java tool that can export the game database to create DLC like this: https://forums.civfanatics.com/threads/lua-database-modifications.566538/#post-14249730
 
-1. Game files can be modified directly
+- Game files can be modified directly
 
-1. Or XML files that make changes can be copied to an existing DLC
+- Or XML files that make changes can be copied to an existing DLC
 
-   1. Copy the XML file to an existing DLC
+  1.  Copy the XML file to an existing DLC
 
       e.g. Assets/DLC/Expansion2/My_DLC/My_File.xml
 
-   1. Then modify the `Civ5Pkg` file for that DLC to include the new file
+  1.  Then modify the `Civ5Pkg` file for that DLC to include the new file
 
       e.g. `<GameData>My_File.xml</GameData>`
 
