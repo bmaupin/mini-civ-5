@@ -26,11 +26,34 @@ For DLC that only needs to override the UI, a custom DLC can be created:
 
 - If there are any additional Lua files that need to be applied, they must be included from one of the above Lua files
 
-  e.g. This line would need to be added to My_DLC/UI/InGame/InGame.lua to include My_DLC/UI/MyFile.lua:
+  - If there's a specific Lua file you know you need to add it to, you can include it, e.g.
 
-  ```lua
-  include( "MyFile" );
-  ```
+    ```lua
+    include( "MyFile" );
+    ```
+
+  - If you want to do the equivalent of the `InGameUIAddin` entry point section in a .modinfo file
+
+    e.g. This line would need to be added to My_DLC/UI/InGame/InGame.lua to include My_DLC/UI/MyFile.lua:
+
+    ```lua
+    table.insert(g_uiAddins, ContextPtr:LoadNewContext("MyFile"));
+    ```
+
+  - In many cases it may be a good idea to add your code to a specific event to make sure it doesn't get added multiple times, e.g.
+
+    ```lua
+    Events.LoadScreenClose.Add( MyFunction )
+    ```
+
+    - Here are some common events:
+
+      - `Events.LoadScreenClose`
+        - "Launched after the user presses that "Begin your journey" button."
+      - `Events.SequenceGameInitComplete`
+        - After the game starts
+
+      Source: [Run a Lua function when game initializes](https://forums.civfanatics.com/threads/run-a-lua-function-when-game-initializes.395278/)
 
 ## Gameplay overrides
 
@@ -65,6 +88,7 @@ I'm only aware of these workarounds:
 
 ## Examples of custom DLC
 
+- [civ5exportinfo](https://github.com/Hyphen-ated/civ5exportinfo)
 - [CivStats](https://github.com/bayvakoof/civstats-mod/)
 - [Enhanced UI DLC mod](https://forums.civfanatics.com/threads/enhanced-user-interface.512263/)
 

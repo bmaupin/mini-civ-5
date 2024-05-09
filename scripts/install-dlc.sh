@@ -17,8 +17,8 @@ cp src/Lua/* "${lua_directory}"
 cp src/XML/* "${xml_directory}"
 
 # To load Lua files as DLC, an existing Lua file needs to explicitly import them
-if ! grep -q 'include( "Quick_Civ_5" );' "${dlc_directory}/UI/InGame/InGame.lua"; then
-    echo -e '\ninclude( "Quick_Civ_5" );' >> "${dlc_directory}/UI/InGame/InGame.lua"
+if ! grep -q 'table.insert(g_uiAddins, ContextPtr:LoadNewContext("Quick_Civ_5"));' "${dlc_directory}/UI/InGame/InGame.lua"; then
+    echo -e '\ntable.insert(g_uiAddins, ContextPtr:LoadNewContext("Quick_Civ_5"));' >> "${dlc_directory}/UI/InGame/InGame.lua"
 fi
 
 # To load XML files as DLC, they need to be added to a Civ5Pkg file with a valid GUID and key
