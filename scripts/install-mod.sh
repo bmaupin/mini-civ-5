@@ -2,10 +2,6 @@
 
 mod_name="Quick Civ 5 (v 1)"
 
-# TODO: auto-detect Linux vs. Proton
-user_directory="/home/${USER}/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5"
-# user_directory="/home/${USER}/.local/share/Aspyr/Sid Meier's Civilization 5"
-
 echo "Updating mod file checksums ..."
 pushd src > /dev/null
 # Override IFS (internal field separator) in order to handle files with spaces in name
@@ -22,8 +18,16 @@ done
 IFS="$original_IFS"
 popd > /dev/null
 
+# Detect whether we're using Linux or Proton
+if [[ -f "/home/$USER/.steam/steam/steamapps/common/Sid Meier's Civilization V/Civ5XP" ]]; then
+    user_directory="/home/${USER}/.local/share/Aspyr/Sid Meier's Civilization 5"
+fi
+
+if [[ -f "/home/$USER/.steam/steam/steamapps/common/Sid Meier's Civilization V/CivilizationV.exe" ]]; then
+    user_directory="/home/${USER}/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5"
+fi
+
 echo "Copying mod files ..."
-maps_directory="${user_directory}/Maps"
 mod_directory="${user_directory}/MODS/$(echo "${mod_name}" | tr '[:upper:]' '[:lower:]')"
 
 # We have to clean up the mod first because otherwise rename will fail because the files will exist
@@ -31,4 +35,5 @@ rm -rf "${mod_directory}"/*
 mkdir -p "$mod_directory"
 cp -r src/* "$mod_directory"
 # All files have to be renamed to lower-case in Linux for it to work (https://stackoverflow.com/a/152741)
+# This isn't needed for Proton but doesn't hurt anything either
 find "${mod_directory}" -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
