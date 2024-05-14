@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mod_name="Quick Civ 5 (v 1)"
+mod_name="Quick Civ 5"
 
 echo "Updating mod file checksums ..."
 pushd src > /dev/null
@@ -18,6 +18,9 @@ done
 IFS="$original_IFS"
 popd > /dev/null
 
+mod_version=$(yq -p xml -oy ".Mod.+@version" "src/${mod_name}.modinfo")
+mod_name_version="${mod_name} (v ${mod_version})"
+
 # Detect whether we're using Linux or Proton
 if [[ -f "/home/$USER/.steam/steam/steamapps/common/Sid Meier's Civilization V/Civ5XP" ]]; then
     user_directory="/home/${USER}/.local/share/Aspyr/Sid Meier's Civilization 5"
@@ -28,12 +31,14 @@ if [[ -f "/home/$USER/.steam/steam/steamapps/common/Sid Meier's Civilization V/C
 fi
 
 echo "Copying mod files ..."
-mod_directory="${user_directory}/MODS/$(echo "${mod_name}" | tr '[:upper:]' '[:lower:]')"
+mod_directory="${user_directory}/MODS/$(echo "${mod_name_version}" | tr '[:upper:]' '[:lower:]')"
 
 # We have to clean up the mod first because otherwise rename will fail because the files will exist
 rm -rf "${mod_directory}"/*
 mkdir -p "$mod_directory"
 cp -r src/* "$mod_directory"
+mv "${mod_directory}/${mod_name}.modinfo" "${mod_directory}/${mod_name_version}.modinfo"
+
 # All files have to be renamed to lower-case in Linux for it to work (https://stackoverflow.com/a/152741)
 # This isn't needed for Proton but doesn't hurt anything either
 find "${mod_directory}" -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
