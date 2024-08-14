@@ -67,3 +67,25 @@ sudo apt install steamcmd
 1. Later, upload screenshots
 
    https://steamcommunity.com/sharedfiles/filedetails/?id=2042081690
+
+## Troubleshooting
+
+#### General troubleshooting
+
+Check log file at ~/.local/share/Steam/logs/workshop_log.txt
+
+#### `ERROR! Failed to load build config file "workshop.vdf".`
+
+If this occurs with no other errors, make sure you pass the full path to the .vdf file you wish to publish.
+
+#### `ERROR! Failed to update workshop item (Invalid Parameter).`
+
+Check the logs in ~/.local/share/Steam/logs/workshop_log.txt
+
+If you see a log like this:
+
+```
+Upload workshop item 1234567890 failed (no workshop depot found)
+```
+
+The game only supports legacy (remote storage) uploads, not newer (UGC) uploads
