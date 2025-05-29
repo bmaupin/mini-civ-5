@@ -12,7 +12,12 @@ See [below](#features) for more information.
 
 ## Installation
 
-The mod hasn't yet been published to Steam as it's still undergoing testing. You may install it manually if you wish (see below)
+Install the mod from Steam here or see below for manual installation instructions:<br>
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3489957747">
+<img src="assets/steam-store-badge.webp" alt="Available on Steam" width="200px">
+</a>
+
+ⓘ It's currently unlisted on Steam right now since testing is still ongoing
 
 ## Usage
 
@@ -89,6 +94,7 @@ Or:
 
 - [ ] Publish to Steam
   - Once the mod has been more thoroughly tested
+- [ ] Way to make time victory disabled by default?
 - [ ] Mod map scripts which have size hard-coded
   - List them with this command:
     ```
