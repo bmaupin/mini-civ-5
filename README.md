@@ -1,4 +1,4 @@
-# Quick Civ 5
+# Mini Civ 5
 
 💡 [See my other Civ projects here](https://github.com/search?q=user%3Abmaupin+topic%3Acivilization&type=Repositories)
 
@@ -24,7 +24,7 @@ The mod hasn't yet been published to Steam as it's still undergoing testing. You
 
 #### Linux
 
-Download the repository source file from [Releases](https://github.com/bmaupin/quick-civ-5/releases), extract it, and then run the install script:
+Download the repository source file from [Releases](https://github.com/bmaupin/mini-civ-5/releases), extract it, and then run the install script:
 
 ```
 ./scripts/install-mod.sh
@@ -32,10 +32,10 @@ Download the repository source file from [Releases](https://github.com/bmaupin/q
 
 Or:
 
-1. Go to [Releases](https://github.com/bmaupin/quick-civ-5/releases) and download the `.civ5mod` file
-1. Get the version of the mod from [src/Quick Civ 5.modinfo](src/Quick%20Civ%205.modinfo)
+1. Go to [Releases](https://github.com/bmaupin/mini-civ-5/releases) and download the `.civ5mod` file
+1. Get the version of the mod from [src/Mini Civ 5.modinfo](src/Mini%20Civ%205.modinfo)
    - It's add the end of the `Mod` element, e.g. `version="1"`
-1. Create a new directory named `quick civ 5 (v 1)`
+1. Create a new directory named `Mini Civ 5 (v 1)`
    - 👉 Update the value after `(v ` with the version from the previous step
 1. Extract the contents of the `.civ5mod` file to the directory you created (it's compressed using 7zip)
 1. Move the directory to the mods directory
@@ -44,13 +44,13 @@ Or:
 
 #### Windows
 
-1. Go to [Releases](https://github.com/bmaupin/quick-civ-5/releases) and download the `.civ5mod` file
+1. Go to [Releases](https://github.com/bmaupin/mini-civ-5/releases) and download the `.civ5mod` file
 1. Copy it to Documents/My Games/Sid Meier's Civilization 5/MODS
 
 ## Usage
 
 1. Start Civ 5 and go to the _Mods_ menu
-1. Check _Quick Civ 5_ and then start a new game
+1. Check _Mini Civ 5_ and then start a new game
 
 ## Wishlist
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mod_name="Quick Civ 5"
+mod_name="Mini Civ 5"
 mod_version=$(yq -p xml -oy ".Mod.+@version" "src/${mod_name}.modinfo")
 export mod_name_version="$(echo "${mod_name} (v ${mod_version})" | tr '[:upper:]' '[:lower:]')"
 
