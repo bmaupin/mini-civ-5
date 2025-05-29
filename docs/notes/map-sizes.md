@@ -188,3 +188,34 @@ Test in game:
   - No city states
   - Religion, science, happiness, world congress off
   - Player: 3 cities, AI: 2 cities each
+
+#### Get maps that have hard-coded sizes
+
+```
+$ for map_file in $(find . -iname "*.lua" -exec sh -c "grep -H GetMapInitData -A 10 \"{}\" | grep 'GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {'" \; | sort | awk '{print $1}'); do basename -s.lua- $map_file; done | sort | tr "_" " " | sed -e "s/\b\(.\)/\u\1/g"
+Amazon
+Amazon Xp
+Boreal
+Continentsplus
+Donut
+Europe
+Four Corners
+Frontier
+Great Plains
+Great Plains Xp
+Hemispheres
+Highlands
+Ice Age
+Inlandsea
+Lakes
+Large Islands
+North Vs South
+Oval
+Pangaeaplus
+Ring
+Script Random China
+Skirmish
+Terra
+Tilted Axis
+West Vs East
+```

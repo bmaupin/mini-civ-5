@@ -30,7 +30,35 @@ The mod hasn't yet been published to Steam as it's still undergoing testing. You
 
 ## Known issues
 
+#### Potential gameplay issues
+
 The map sizes in this mod are so small that they may negatively impact gameplay. Testing of the map sizes is ongoing.
+
+#### Not all maps are smaller
+
+This mod doesn't make changes to individual maps, only the global map sizes. Maps that override the global map sizes are unaffected by this mod. This includes all of the maps for a specific location (Earth, Europe, South America, etc.) as well as:
+
+- Amazon
+- Boreal
+- Continents Plus
+- Donut
+- Four Corners
+- Frontier
+- Great Plains
+- Hemispheres
+- Highlands
+- Ice Age
+- Inland Sea
+- Lakes
+- Large Islands
+- North vs South
+- Oval
+- Pangaea Plus
+- Ring
+- Skirmish
+- Terra
+- Tilted Axis
+- West vs East
 
 ## Manual installation
 
@@ -61,6 +89,11 @@ Or:
 
 - [ ] Publish to Steam
   - Once the mod has been more thoroughly tested
+- [ ] Mod map scripts which have size hard-coded
+  - List them with this command:
+    ```
+    find . -iname "*.lua" -exec sh -c "grep -H GetMapInitData -A 10 \"{}\" | grep 'GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {'" \; | sort
+    ```
 - [ ] Adjust map sizes?
   - Needs more testing
 - [ ] Limit number of settlers?
