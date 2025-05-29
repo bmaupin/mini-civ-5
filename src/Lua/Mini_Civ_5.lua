@@ -114,5 +114,67 @@ function CanCityConstructBuilding(playerID, cityID, buildingID)
 
     return true
 end
-
 GameEvents.CityCanConstruct.Add(CanCityConstructBuilding)
+
+-- NOTE: The unit automation code has been copied from https://github.com/bmaupin/mini-beyond-earth/blob/main/src/Lua/Mini_Beyond_Earth.lua
+--
+-- Unfortunately Events.SerialEventUnitCreated is called more than just when a unit is
+-- created: "SerialEventUnitCreated works for this. It triggers for all players, whever a
+-- unit is created. Unfortunately, it ALSO triggers whenever a unit embarks, disembarks,
+-- rebases, etc." (https://forums.civfanatics.com/threads/any-way-to-get-the-unit-create-event-to-work-as-expected.434826/#post-10764768)
+--
+-- We could maybe use this mod instead?: https://steamcommunity.com/sharedfiles/filedetails/?id=264749558
+-- But this code is copied from Mini Beyond Earth and has already been tested
+local automatedUnits = {};
+function MaybeAutomateUnit(playerID, unitID)
+    local player = Players[playerID];
+    local unit = player:GetUnitByID(unitID);
+
+    if not player:IsHuman() or not player:IsAlive() then
+        return;
+    end
+
+    -- Scouts seem to stay automated until there's nothing left to explore
+    if (PreGame.GetGameOption("GAMEOPTION_SCOUTS_START_AUTO") == 1) then
+        if unit ~= nil and unit:GetUnitType() == GameInfo.Units["UNIT_SCOUT"].ID then
+            -- If the unit isn't in the table we're using to track automated units
+            if not automatedUnits[unitID] then
+                -- If the unit is already automated (e.g. after loading a save)
+                if unit:IsAutomated() then
+                    -- Mark the unit as automated by adding its ID to the table
+                    automatedUnits[unitID] = true;
+
+                -- If the unit isn't automated, first check that we can automated it
+                elseif unit:CanDoCommand(CommandTypes.COMMAND_AUTOMATE, 1) then
+                    print("(Mini Civ 5) Automating scout");
+                    -- 1 = AutomateTypes.AUTOMATE_EXPLORE in CvEnums.h (from Civ 5 SDK)
+                    unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 1);
+
+                    automatedUnits[unitID] = true;
+                end
+            end
+        end
+    end
+
+    -- Every once in a while a worker seems to get ... un-automated, maybe because
+    -- another unit is occupying a tile it was going to move to? I'm not sure
+    -- it's worth worrying about since the workaround is as simple as clicking automate
+    -- again (Does this happen in Civ 5 too?)
+    if (PreGame.GetGameOption("GAMEOPTION_WORKERS_START_AUTO") == 1) then
+        if unit ~= nil and unit:GetUnitType() == GameInfo.Units["UNIT_WORKER"].ID then
+            if not automatedUnits[unitID] then
+                if unit:IsAutomated() then
+                    automatedUnits[unitID] = true;
+
+                elseif unit:CanDoCommand(CommandTypes.COMMAND_AUTOMATE, 0) then
+                    print("(Mini Civ 5) Automating worker");
+                    -- 0 = AutomateTypes.AUTOMATE_BUILD in CvEnums.h (from Civ 5 SDK)
+                    unit:DoCommand(CommandTypes.COMMAND_AUTOMATE, 0);
+
+                    automatedUnits[unitID] = true;
+                end
+            end
+        end
+    end
+end
+Events.SerialEventUnitCreated.Add(MaybeAutomateUnit);

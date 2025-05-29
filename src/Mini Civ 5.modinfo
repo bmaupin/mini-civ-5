@@ -22,8 +22,8 @@
   <References />
   <Blocks />
   <Files>
-    <File md5="f85d4869cf6a0baea2ab6f06653b33e4" import="0">Lua/Mini_Civ_5.lua</File>
-    <File md5="8a9f25d8c781e45b6cd91d1204e8084c" import="1">XML/Mini_Civ_5.xml</File>
+    <File md5="6a275a0bb3eaf6ab0f2546a52b520225" import="0">Lua/Mini_Civ_5.lua</File>
+    <File md5="5f1a7ee72e53ca0944731a237459bde4" import="1">XML/Mini_Civ_5.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
@@ -31,7 +31,7 @@
     </OnModActivated>
   </Actions>
   <EntryPoints>
-    <EntryPoint type="InGameUIAddin" file="Lua/Quick_Civ_5.lua">
+    <EntryPoint type="InGameUIAddin" file="Lua/Mini_Civ_5.lua">
       <Name>Logic</Name>
       <Description>Logic</Description>
     </EntryPoint>

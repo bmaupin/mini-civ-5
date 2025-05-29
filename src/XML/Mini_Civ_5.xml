@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameData>
     <GameOptions>
+        <Row>
+            <Type>GAMEOPTION_SCOUTS_START_AUTO</Type>
+            <Description>TXT_KEY_GAME_OPTION_SCOUTS_START_AUTO</Description>
+            <Help>TXT_KEY_GAME_OPTION_SCOUTS_START_AUTO</Help>
+            <Default>false</Default>
+        </Row>
+        <Row>
+            <Type>GAMEOPTION_WORKERS_START_AUTO</Type>
+            <Description>TXT_KEY_GAME_OPTION_WORKERS_START_AUTO</Description>
+            <Help>TXT_KEY_GAME_OPTION_WORKERS_START_AUTO</Help>
+            <Default>false</Default>
+        </Row>
         <!-- Base game -->
         <Update>
             <Where Type="GAMEOPTION_ALWAYS_PEACE" />
@@ -96,6 +108,20 @@
             </Set>
         </Update>
     </GameOptions>
+    <Language_en_US>
+        <Row Tag="TXT_KEY_GAME_OPTION_SCOUTS_START_AUTO">
+            <Text>Scouts Start Automated</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_SCOUTS_START_AUTO_HELP">
+            <Text>Scouts will automatically start exploring as soon as they're created. This can be cancelled by clicking their Stop Automation action.</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_WORKERS_START_AUTO">
+            <Text>Workers Start Automated</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_WORKERS_START_AUTO_HELP">
+            <Text>Workers will automatically start building improvements as soon as they're created. This can be cancelled by clicking their Stop Automation action.</Text>
+        </Row>
+    </Language_en_US>
     <Worlds>
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
