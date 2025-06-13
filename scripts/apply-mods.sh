@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# echo "Deleting intro movies"
+# find "/home/$USER/.local/share/Steam/steamapps/common/Sid Meier's Civilization V" -iname "civ5*_opening_movie*.mov" -delete
+
 game_options_files=(
     "/home/$USER/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/Assets/DLC/Expansion2/Gameplay/XML/GameInfo/CIV5GameOptions_Expansion2.xml"
     "/home/$USER/.local/share/Steam/steamapps/common/Sid Meier's Civilization V/Assets/DLC/Expansion2/Gameplay/XML/GameInfo/CIV5GameOptions_Inherited_Expansion2.xml"

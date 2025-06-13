@@ -17,8 +17,6 @@ Install the mod from Steam here or see below for manual installation instruction
 <img src="assets/steam-store-badge.webp" alt="Available on Steam" width="200px">
 </a>
 
-ⓘ It's currently unlisted on Steam right now since testing is still ongoing
-
 ## Usage
 
 1. Start Civ 5 and go to the _Mods_ menu

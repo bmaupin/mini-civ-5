@@ -1,0 +1,13 @@
+{
+  // Make it so that the Lua extension only diagnoses the currently open file instead of the entire workspace
+  "Lua.workspace.maxPreload": 0,
+  "Lua.diagnostics.globals": [
+    "CommandTypes",
+    "Events",
+    "GameEvents",
+    "GameInfo",
+    "GameInfoTypes",
+    "Players",
+    "PreGame"
+  ]
+}
