@@ -17,3 +17,7 @@ mod_directory="${user_directory}/MODS/${mod_name_version}"
 # We have to clean up the mod first because otherwise rename will fail because the files will exist
 rm -rf "${mod_directory}"/*
 7z x "${mod_name_version}.civ5mod" -o"${mod_directory}"
+
+# This hack seems to be enough to signal to the game that there have been changes to mods 🤷‍♂️
+touch "${user_directory}/MODS/test"
+rm "${user_directory}/MODS/test"
