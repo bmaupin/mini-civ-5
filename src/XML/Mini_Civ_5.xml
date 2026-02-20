@@ -5,13 +5,11 @@
             <Type>GAMEOPTION_SCOUTS_START_AUTO</Type>
             <Description>TXT_KEY_GAME_OPTION_SCOUTS_START_AUTO</Description>
             <Help>TXT_KEY_GAME_OPTION_SCOUTS_START_AUTO</Help>
-            <Default>false</Default>
         </Row>
         <Row>
             <Type>GAMEOPTION_WORKERS_START_AUTO</Type>
             <Description>TXT_KEY_GAME_OPTION_WORKERS_START_AUTO</Description>
             <Help>TXT_KEY_GAME_OPTION_WORKERS_START_AUTO</Help>
-            <Default>false</Default>
         </Row>
         <!-- Base game -->
         <Update>
@@ -27,26 +25,9 @@
             </Set>
         </Update>
         <Update>
-            <Where Type="GAMEOPTION_LOCK_MODS" />
-            <Set>
-                <Visible>1</Visible>
-            </Set>
-        </Update>
-        <Update>
-            <Where Type="GAMEOPTION_NO_CHANGING_WAR_PEACE" />
-            <Set>
-                <Visible>1</Visible>
-            </Set>
-        </Update>
-        <Update>
-            <Where Type="GAMEOPTION_NO_CITY_RAZING" />
-            <Set>
-                <Default>1</Default>
-            </Set>
-        </Update>
-        <Update>
             <Where Type="GAMEOPTION_NO_HAPPINESS" />
             <Set>
+                <Default>1</Default>
                 <Visible>1</Visible>
             </Set>
         </Update>
@@ -82,12 +63,6 @@
             </Set>
         </Update>
         <!-- Expansion 1 (Gods and Kings) -->
-        <!-- <Update>
-            <Where Type="GAMEOPTION_NO_ESPIONAGE" />
-            <Set>
-                <Default>1</Default>
-            </Set>
-        </Update> -->
         <Update>
             <Where Type="GAMEOPTION_NO_RELIGION" />
             <Set>
@@ -95,6 +70,7 @@
             </Set>
         </Update>
         <!-- Expansion 2 (Brave New World) -->
+        <!-- TODO: What does this do? -->
         <Update>
             <Where Type="GAMEOPTION_NO_CULTURE_OVERVIEW_UI" />
             <Set>
