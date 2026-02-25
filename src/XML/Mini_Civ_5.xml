@@ -27,7 +27,6 @@
         <Update>
             <Where Type="GAMEOPTION_NO_HAPPINESS" />
             <Set>
-                <Default>1</Default>
                 <Visible>1</Visible>
             </Set>
         </Update>
@@ -46,20 +45,7 @@
         <Update>
             <Where Type="GAMEOPTION_NO_TUTORIAL" />
             <Set>
-                <Default>1</Default>
                 <Visible>1</Visible>
-            </Set>
-        </Update>
-        <Update>
-            <Where Type="GAMEOPTION_QUICK_COMBAT" />
-            <Set>
-                <Default>1</Default>
-            </Set>
-        </Update>
-        <Update>
-            <Where Type="GAMEOPTION_QUICK_MOVEMENT" />
-            <Set>
-                <Default>1</Default>
             </Set>
         </Update>
         <!-- Expansion 1 (Gods and Kings) -->
@@ -70,13 +56,6 @@
             </Set>
         </Update>
         <!-- Expansion 2 (Brave New World) -->
-        <!-- TODO: What does this do? -->
-        <Update>
-            <Where Type="GAMEOPTION_NO_CULTURE_OVERVIEW_UI" />
-            <Set>
-                <Visible>1</Visible>
-            </Set>
-        </Update>
         <Update>
             <Where Type="GAMEOPTION_NO_LEAGUES" />
             <Set>
@@ -102,8 +81,6 @@
         <Update>
             <Where Type="WORLDSIZE_DUEL" />
             <Set>
-                <!-- TODO: does this work? -->
-                <DefaultMinorCivs>0</DefaultMinorCivs>
                 <GridWidth>16</GridWidth>
                 <GridHeight>10</GridHeight>
             </Set>
@@ -111,8 +88,6 @@
         <Update>
             <Where Type="WORLDSIZE_TINY" />
             <Set>
-                <DefaultMinorCivs>0</DefaultMinorCivs>
-                <!-- TODO: override DefaultPlayers? -->
                 <GridWidth>22</GridWidth>
                 <GridHeight>14</GridHeight>
             </Set>
@@ -120,7 +95,6 @@
         <Update>
             <Where Type="WORLDSIZE_SMALL" />
             <Set>
-                <DefaultMinorCivs>0</DefaultMinorCivs>
                 <GridWidth>26</GridWidth>
                 <GridHeight>17</GridHeight>
             </Set>
@@ -128,7 +102,6 @@
         <Update>
             <Where Type="WORLDSIZE_STANDARD" />
             <Set>
-                <DefaultMinorCivs>0</DefaultMinorCivs>
                 <GridWidth>32</GridWidth>
                 <GridHeight>21</GridHeight>
             </Set>
@@ -136,7 +109,6 @@
         <Update>
             <Where Type="WORLDSIZE_LARGE" />
             <Set>
-                <DefaultMinorCivs>0</DefaultMinorCivs>
                 <GridWidth>42</GridWidth>
                 <GridHeight>26</GridHeight>
             </Set>
@@ -144,7 +116,6 @@
         <Update>
             <Where Type="WORLDSIZE_HUGE" />
             <Set>
-                <DefaultMinorCivs>0</DefaultMinorCivs>
                 <GridWidth>51</GridWidth>
                 <GridHeight>32</GridHeight>
             </Set>
