@@ -18,6 +18,10 @@ mod_directory="${user_directory}/MODS/${mod_name_version}"
 rm -rf "${mod_directory}"/*
 7z x "${mod_name_version}.civ5mod" -o"${mod_directory}"
 
+# Inject the current timestamp into the mod teaser text. This makes it easier to tell if
+# the mod has been updated when doing development.
+sed -i "s|\(<Teaser>\)[^<]*\(</Teaser>\)|\1$(date)\2|" "${mod_directory}/${mod_name_version}.modinfo"
+
 # This hack seems to be enough to signal to the game that there have been changes to mods 🤷‍♂️
 touch "${user_directory}/MODS/test"
 rm "${user_directory}/MODS/test"
