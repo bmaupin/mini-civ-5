@@ -24,6 +24,9 @@ Install the mod from Steam here or see below for manual installation instruction
 
 ## Features
 
+> [!TIP]
+> Try [Ozymandias](https://goblinzstudio.com/game/ozymandias/) if you would like a Civ-like game that plays much more quickly
+
 - Smaller maps: this alone has the biggest impact on the length of the game
 - Shows hidden game options: this allows disabling of some game features (religion, happiness, etc.) that could make the game quicker
 - Disables buildings and wonders related to hidden game options. For example, if religion is disabled then the shrine building and the Grand Temple wonder will not show in the city's build queue.
@@ -32,6 +35,8 @@ Install the mod from Steam here or see below for manual installation instruction
   - Workers Start Automated
 
 ## Known issues
+
+ⓘ See [issues](https://github.com/bmaupin/mini-civ-5/issues) for other potential issues
 
 #### Potential gameplay issues
 
@@ -87,23 +92,3 @@ Or:
 
 1. Go to [Releases](https://github.com/bmaupin/mini-civ-5/releases) and download the `.civ5mod` file
 1. Copy it to Documents/My Games/Sid Meier's Civilization 5/MODS
-
-## Wishlist
-
-- [ ] Publish to Steam
-  - Once the mod has been more thoroughly tested
-- [ ] Way to make time victory disabled by default?
-- [ ] Mod map scripts which have size hard-coded
-  - List them with this command:
-    ```
-    find . -iname "*.lua" -exec sh -c "grep -H GetMapInitData -A 10 \"{}\" | grep 'GameInfo.Worlds.WORLDSIZE_DUEL.ID] = {'" \; | sort
-    ```
-- [ ] Adjust map sizes?
-  - Needs more testing
-- [ ] Limit number of settlers?
-  - An alternative to extremely small map sizes could be limiting the number of settlers per player, for example disable building new settlers after the player has N cities (e.g. 3). This could allow bigger map sizes for less of a negative impact on gameplay.
-- [ ] Disable units from previous eras?
-  - E.g. if a cannon replaces an archer, archer should not longer be available to build
-  - Maybe the game already does this?
-- [ ] Options to disable additional expansion content
-  - Each expansion added more buildings, units, wonders, etc., all of which can increase the length of the game. It might be nice to have one or more options to disable these additions to allow the game to be played with the mechanics or additional civs of an expansion but without the additional content.
