@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../civ-modding-tools"
+		},
+		{
+			"path": "../../../../../.local/share/Steam/steamapps/common/Sid Meier's Civilization V"
+		},
+		{
+			"path": "../../../../../.local/share/Steam/steamapps/common/Sid Meier's Civilization V SDK"
+		}
+	],
+	"settings": {}
+}
