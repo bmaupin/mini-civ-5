@@ -24,8 +24,8 @@
   <!-- See here for more information about this section: https://forums.civfanatics.com/threads/file-attributes-properties-is-that-vfs-ingameuiaddin-or-updatedatabase.487846/ -->
   <Files>
     <File md5="6a275a0bb3eaf6ab0f2546a52b520225" import="0">Lua/Mini_Civ_5.lua</File>
-    <File md5="ce2440cb23fd24995a942e767c965d6c" import="0">SQL/SmallerMaps.sql</File>
-    <File md5="ab2a9901287bc2308154521f5ae4578d" import="1">XML/Mini_Civ_5.xml</File>
+    <File md5="eab6543197d5c0eec775ab810f0f1842" import="0">SQL/SmallerMaps.sql</File>
+    <File md5="8a4f5b5a6032ee6ddb94167dcb4fb0fe" import="1">XML/Mini_Civ_5.xml</File>
   </Files>
   <Actions>
     <OnModActivated>
