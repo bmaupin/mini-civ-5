@@ -13,3 +13,9 @@ SET
             THEN MAX(10, ROUND(GridHeight * 0.4) - 1)
         ELSE MAX(10, ROUND(GridHeight * 0.4))
     END;
+
+-- Scale down natural wonders too. Technically this should be
+-- NumNaturalWonders * 0.4 * 0.4 (map size is width and height) but that seems too
+-- extreme. Adjust as needed.
+UPDATE Worlds
+SET NumNaturalWonders = ROUND(NumNaturalWonders * 0.4);
