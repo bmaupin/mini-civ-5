@@ -33,6 +33,7 @@ Install the mod from Steam here or see below for manual installation instruction
 - New game options:
   - Scouts Start Automated
   - Workers Start Automated
+    - This does not include work boats, as they're one-time use units
 
 ## Known issues
 
