@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Exit right away if there are any errors (e.g. yq or another tool isn't installed)
+set -e
+
 mod_name="Mini Civ 5"
 mod_version=$(yq -p xml -oy ".Mod.+@version" "src/${mod_name}.modinfo")
 export mod_name_version="$(echo "${mod_name} (v ${mod_version})" | tr '[:upper:]' '[:lower:]')"
@@ -28,9 +31,8 @@ temp_dir=$(mktemp -d -p $(pwd))
 cp -ar src/. "${temp_dir}"
 pushd "${temp_dir}" > /dev/null
 mv "${mod_name}.modinfo" "${mod_name_version}.modinfo"
-# All files have to be renamed to lower-case in Linux for it to work (https://stackoverflow.com/a/152741)
-# This isn't needed for Proton but doesn't hurt anything either
-find . -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
+# Lower-case all file names for cross-platform compatibility, particularly Linux (https://stackoverflow.com/a/152741)
+find . -depth -name '*[A-Z]*'|sed -n 's/\(.*\/\)\(.*\)/mv -n -T "\1\2" "\1\L\2"/p'|sh
 7z a -r ../"${mod_name_version}.civ5mod" *
 popd > /dev/null
 rm -rf "${temp_dir}"

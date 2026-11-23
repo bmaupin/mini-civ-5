@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Exit right away if there are any errors (e.g. yq or another tool isn't installed)
+set -e
+
 source "$(dirname "$(which "$0")")/package-mod.sh"
 
 # Detect whether we're using native or Proton
