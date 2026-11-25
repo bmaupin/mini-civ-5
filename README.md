@@ -73,14 +73,6 @@ This mod doesn't make changes to individual maps, only the global map sizes. Map
 
 #### Linux
 
-Download the repository source file from [Releases](https://github.com/bmaupin/mini-civ-5/releases), extract it, and then run the install script:
-
-```
-./scripts/install-mod.sh
-```
-
-Or:
-
 1. Go to [Releases](https://github.com/bmaupin/mini-civ-5/releases) and download the `.civ5mod` file
 1. Create a new directory named `Mini Civ 5 (v 1)`
    - 👉 Update the value after `(v ` with the version from the filename
@@ -88,6 +80,8 @@ Or:
 1. Move the directory to the mods directory
    - Native: ~/.local/share/Aspyr/Sid Meier's Civilization 5/MODS
    - Proton: ~/.steam/steam/steamapps/compatdata/8930/pfx/drive_c/users/steamuser/Documents/My Games/Sid Meier's Civilization 5/MODS
+
+ⓘ The project also has an [install script](./scripts/install.sh) but this is meant for local development; it will install the latest version of the mod which may not be ready for release
 
 #### Windows
 
