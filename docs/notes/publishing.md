@@ -7,5 +7,5 @@ Sample command for publishing a new version of the mod:
 ```
 steamremotestorage-uploader -a 8930 -i 3489957747 -f "mini civ 5 (v 2).civ5mod" -n "v2: Version summary
 
-https://github.com/bmaupin/mini-civ-5/releases/tag/v2""
+https://github.com/bmaupin/mini-civ-5/releases/tag/v2"
 ```
